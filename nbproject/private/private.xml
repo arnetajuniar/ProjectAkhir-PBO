@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/IF_SMT4/7%20-%20Pemrograman%20Berorientasi%20Objek/PROJECT/src/controller/Controller_Pengirim.java</file>
-            <file>file:/D:/IF_SMT4/7%20-%20Pemrograman%20Berorientasi%20Objek/PROJECT/src/model/Model_Pengirim.java</file>
-            <file>file:/D:/IF_SMT4/7%20-%20Pemrograman%20Berorientasi%20Objek/PROJECT/src/koneksi/Koneksi.java</file>
-            <file>file:/D:/IF_SMT4/7%20-%20Pemrograman%20Berorientasi%20Objek/PROJECT/src/view/Form_Pengirim.java</file>
+            <file>file:/C:/Users/Lenovo/Downloads/poryek/src/view/PengirimanView.java</file>
+            <file>file:/C:/Users/Lenovo/Downloads/poryek/src/view/RegistrasiView.java</file>
+            <file>file:/C:/Users/Lenovo/Downloads/poryek/src/controller/PengirimanController.java</file>
+            <file>file:/C:/Users/Lenovo/Downloads/poryek/src/crud/Crud.java</file>
+            <file>file:/C:/Users/Lenovo/Downloads/poryek/src/view/LoginView.java</file>
         </group>
     </open-files>
 </project-private>
