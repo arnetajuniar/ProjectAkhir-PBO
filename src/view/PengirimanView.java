@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import javax.swing.JButton;
@@ -13,10 +8,6 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Hewlett-Packard
- */
 public class PengirimanView extends JFrame{
    
     JLabel lId = new JLabel("ID Pengiriman");
@@ -57,7 +48,7 @@ public class PengirimanView extends JFrame{
         table = new JTable(dtm);
         scrollPane = new JScrollPane(table);
         
-        setTitle("Pengiriman");
+        setTitle("Pengiriman Barang");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
        
         setResizable(false);
@@ -183,11 +174,6 @@ public class PengirimanView extends JFrame{
     
     public void setJarak(){
         jarak.setText("");
-    }
-    
-   
-    public static void main(String[] args){
-        new PengirimanView();
     }
     
     
