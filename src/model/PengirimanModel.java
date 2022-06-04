@@ -64,7 +64,7 @@ public class PengirimanModel implements Perhitungan {
             score = average(brt);
             
             statement = connection.createStatement();
-            statement.executeUpdate("insert into `transaksi` (`id`, `penerima`, `pengirim`, `kurir`, `alamat` , `nama_barang`, `berat`,`jarak`,`biaya`) " + 
+            statement.executeUpdate("insert into `transaksi` (`id`, `penerima`, `pengirim`, `kurir`, `alamat` , `nama_barang`,`jarak`,`berat`, `biaya`) " + 
                         " values  ('" + id + "','" + penerima + "','" + pengirim + "','" + kurir + "','" +alamat+ "','" + barang+ "'," + brt + ","+ jrk +","+ score +")");
             
             JOptionPane.showMessageDialog(null, "Input Data Berhasil");
@@ -96,8 +96,8 @@ public class PengirimanModel implements Perhitungan {
                 data[totalData][3] = resultSet.getString("kurir");
                 data[totalData][4] = resultSet.getString("alamat");
                 data[totalData][5] = resultSet.getString("nama_barang");
-                data[totalData][6] = resultSet.getString("berat");
-                data[totalData][7] = resultSet.getString("jarak");
+                data[totalData][6] = resultSet.getString("jarak");
+                data[totalData][7] = resultSet.getString("berat");
                 data[totalData][8] = resultSet.getString("biaya");
               
                 totalData++;
@@ -111,7 +111,7 @@ public class PengirimanModel implements Perhitungan {
         }
     }
     
-    public void updateData(String id, String penerima, String pengirim, String kurir, String alamat, String barang, String jarak, String berat){
+    public void updateData(String id, String penerima, String pengirim, String kurir, String alamat,  String barang, String jarak, String berat){
         try {
             int jrk, brt, score;
             jrk = Integer.parseInt(jarak);
@@ -126,8 +126,8 @@ public class PengirimanModel implements Perhitungan {
                     + "`kurir`='" + kurir + "',"
                     + "`alamat`='" + alamat + "',"
                     + "`nama_barang`='" + barang + "',"
-                    + "`berat`=" + brt + ","
                     + "`jarak`=" + jrk + ","
+                    + "`berat`=" + brt + ","
                     + "`biaya`="+score
                     + " WHERE id='" + id + "'";
             
