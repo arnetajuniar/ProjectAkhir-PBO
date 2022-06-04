@@ -11,12 +11,12 @@ public class Crud {
 
     public static void main(String[] args) throws SQLException {
     
-       LoginView LoginView = new LoginView( );
+        LoginView LoginView = new LoginView( );
         RegistrasiView RegistrasiView = new RegistrasiView(); 
         PengirimanView PengirimanView = new PengirimanView();
-                  PengirimanModel PengirimanModel = new PengirimanModel( );
+        PengirimanModel PengirimanModel = new PengirimanModel( );
                                
-         PengirimanController PengirimanController = new PengirimanController( LoginView,  PengirimanModel, PengirimanView, RegistrasiView);
+        PengirimanController PengirimanController = new PengirimanController( LoginView,  PengirimanModel, PengirimanView, RegistrasiView);
 
     }
     

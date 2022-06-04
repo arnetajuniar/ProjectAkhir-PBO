@@ -15,18 +15,10 @@ public class RegistrasiView extends JFrame{
 
     public JTextField user = new JTextField();
     public JTextField pass = new JTextField();
-   
-   
-  
-    
     public JButton addUser = new JButton("Add");
-
-
-
 
     public RegistrasiView() {
        
-        
         setTitle("Registrasi");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
        
@@ -34,7 +26,6 @@ public class RegistrasiView extends JFrame{
         setLayout(null);
         setSize(400,400);
       
-        
         add(luser);
         luser.setBounds(70, 70, 90, 20);
         add(user);
@@ -45,36 +36,17 @@ public class RegistrasiView extends JFrame{
         add(pass);
         pass.setBounds(180, 100, 120, 20);
         
-     
-         
-     
-        
-        
-        
         add(addUser);
         addUser.setBounds(90, 150, 200, 20);
-      
-        
-      
     }
-    
-    
-   
-    
     
     public String getUser(){
         return user.getText();
     }
- 
     
     public String getPass(){
         return pass.getText();
     }
-    
-  
-   
-    
-   
     
     public void setUser(){
         user.setText("");
@@ -83,12 +55,6 @@ public class RegistrasiView extends JFrame{
     public void setPass(){
         pass.setText("");
     }
-    
-   
-    
-   
-    
-    
     
 }
 

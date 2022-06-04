@@ -32,8 +32,8 @@ public class PengirimanModel implements Perhitungan {
     }
 
     @Override
-    public int average(int jrk, int brt) {
-        return (jrk*brt);
+    public int average(int brt) {
+        return (2000*brt);
     }
     
     public int getKasirdata(){
@@ -54,18 +54,15 @@ public class PengirimanModel implements Perhitungan {
         }
     }
     
-    public void insertKasir(String id, String penerima, String pengirim, String kurir, String alamat, String barang, String jarak, String berat){
+    public void insertData(String id, String penerima, String pengirim, String kurir, String alamat, String barang, String jarak, String berat){
         try {
             
             int jrk, brt, score;
-           jrk = Integer.parseInt(jarak);
+            jrk = Integer.parseInt(jarak);
             brt = Integer.parseInt(berat);
            
+            score = average(brt);
             
-            score = average(jrk, brt);
-            
-
-          
             statement = connection.createStatement();
             statement.executeUpdate("insert into `transaksi` (`id`, `penerima`, `pengirim`, `kurir`, `alamat` , `nama_barang`, `berat`,`jarak`,`biaya`) " + 
                         " values  ('" + id + "','" + penerima + "','" + pengirim + "','" + kurir + "','" +alamat+ "','" + barang+ "'," + brt + ","+ jrk +","+ score +")");
@@ -75,13 +72,13 @@ public class PengirimanModel implements Perhitungan {
             System.out.println(e.getMessage());
             if(e.getMessage().equals("")){
                 JOptionPane.showMessageDialog(null, "Mohon Lengkapi Data");
-            }else{
+            } else{
                 JOptionPane.showMessageDialog(null, "Data Gagal di Input");
             }     
         }
     }
     
-    public String[][] tampilKasir(){
+    public String[][] tampilData(){
         try{
             int totalData = 0;
             
@@ -100,7 +97,7 @@ public class PengirimanModel implements Perhitungan {
                 data[totalData][4] = resultSet.getString("alamat");
                 data[totalData][5] = resultSet.getString("nama_barang");
                 data[totalData][6] = resultSet.getString("berat");
-                 data[totalData][7] = resultSet.getString("jarak");
+                data[totalData][7] = resultSet.getString("jarak");
                 data[totalData][8] = resultSet.getString("biaya");
               
                 totalData++;
@@ -108,23 +105,19 @@ public class PengirimanModel implements Perhitungan {
             statement.close();
             return data;
                
-        }catch(SQLException e){
+        } catch(SQLException e){
             System.out.println("Error : " + e.getMessage());
             return null;
         }
     }
     
-    public void updateKasir(String id, String penerima, String pengirim, String kurir, String alamat, String barang, String jarak, String berat){
+    public void updateData(String id, String penerima, String pengirim, String kurir, String alamat, String barang, String jarak, String berat){
         try {
             int jrk, brt, score;
-           jrk = Integer.parseInt(jarak);
+            jrk = Integer.parseInt(jarak);
             brt = Integer.parseInt(berat);
            
-            
-            score = average(jrk, brt);
-            
-    
-       
+            score = average(brt);
             
             String query = "UPDATE `transaksi` "
                     + "SET "
@@ -146,20 +139,20 @@ public class PengirimanModel implements Perhitungan {
             System.out.println(e.getMessage());
             if(e.getMessage().equals("")){
                 JOptionPane.showMessageDialog(null, "Mohon Lengkapi Data");
-            }else{
+            } else{
                 JOptionPane.showMessageDialog(null, "Update gagal");
             }     
         }
     }
     
-    public void deleteKasir (String id) {
+    public void deleteData (String id) {
         try{
             String query = "DELETE FROM transaksi WHERE id = '"+id+"'";
             statement = connection.createStatement();
             statement.executeUpdate(query);
             JOptionPane.showMessageDialog(null, "Delete Success");
             
-        }catch(SQLException e) {
+        } catch(SQLException e) {
             System.out.println("Error : " + e.getMessage());
             JOptionPane.showMessageDialog(null, "Delete Failed");
         }
@@ -169,36 +162,28 @@ public class PengirimanModel implements Perhitungan {
         int a = 0;
         try {
           
-      
-       
             String query = "SELECT * FROM `akun` WHERE user ='"+user+"'and pass='"+pass+"'";
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query );
 
             if(resultSet.next()){
-                 JOptionPane.showMessageDialog(null, "Login Berhasil");
-                  a = 0;
+                JOptionPane.showMessageDialog(null, "Login Berhasil");
+                a = 0;
             }
-           else
-            {
+            else{
                 JOptionPane.showMessageDialog(null, "Login Gagal. Silahkan Cek Username dan Password anda");
-                 a = 1;
-                
+                a = 1;
             }
-         
         } catch (Exception e) {
             System.out.println("Error : " + e.getMessage());
-           
         }
         return a;
-       
     }
     
     public int Registrasi(String user, String pass){
-         int a = 0;
+        int a = 0;
         try {
             
-          
             statement = connection.createStatement();
             statement.executeUpdate("insert into `akun` (`user`, `pass`) " + 
                         " values  ('" + user + "','" + pass +"')");
@@ -210,13 +195,12 @@ public class PengirimanModel implements Perhitungan {
             if(e.getMessage().equals("")){
                 JOptionPane.showMessageDialog(null, "Mohon Lengkapi Data");
                 a =1;
-            }else{
+            } else{
                 JOptionPane.showMessageDialog(null, "Akun Sudah Ada silahkan gunakan akun lain");
                 a=1;
             }     
         }
         return a;
     }
-    
 }
         

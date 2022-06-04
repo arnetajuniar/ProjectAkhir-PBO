@@ -16,23 +16,18 @@ public class PengirimanView extends JFrame{
     JLabel lkurir = new JLabel("Kurir");
     JLabel lalamat = new JLabel("Alamat");
     JLabel lbarang = new JLabel("Nama Barang");
-    JLabel ljarak = new JLabel("Jarak");
-    JLabel lberat = new JLabel("Berat");
+    JLabel ljarak = new JLabel("Jarak (km)");
+    JLabel lberat = new JLabel("Berat (kg)");
  
-     
- 
-    
     public JTextField id  = new JTextField();
-    public JTextField penerima = new JTextField();
     public JTextField pengirim = new JTextField();
+    public JTextField penerima = new JTextField();
     public JTextField kurir  = new JTextField();
     public JTextField alamat = new JTextField();
     public JTextField barang = new JTextField();
-    public JTextField berat  = new JTextField();
     public JTextField jarak= new JTextField();
+    public JTextField berat  = new JTextField();
    
-  
-    
     public JButton btnSimpan = new JButton("Add");
     public JButton btnUbah = new JButton("Update");
     public JButton btnHapus = new JButton("Delete");
@@ -41,14 +36,14 @@ public class PengirimanView extends JFrame{
     public JTable table;
     DefaultTableModel dtm;
     JScrollPane scrollPane;
-    public Object[] columnName = {"ID", "Pengirim", "Penerima", "Kurir", "Alamat", "Nama Barang", "Jarak", "Berat", "Biaya"};
+    public Object[] columnName = {"ID", "Pengirim", "Penerima", "Kurir", "Alamat", "Nama Barang", "Jarak (km)", "Berat (kg)", "Ongkir"};
 
     public PengirimanView() {
         dtm = new DefaultTableModel(columnName, 0);
         table = new JTable(dtm);
         scrollPane = new JScrollPane(table);
         
-        setTitle("Pengiriman Barang");
+        setTitle("Pengiriman Barang OKExpress");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
        
         setResizable(false);
@@ -57,8 +52,6 @@ public class PengirimanView extends JFrame{
         
         add(scrollPane);
         scrollPane.setBounds(250, 25, 800, 400);
-        
-       
         
         add(lId);
         lId.setBounds(20, 20, 90, 20);
@@ -89,18 +82,18 @@ public class PengirimanView extends JFrame{
         lbarang.setBounds(20, 220, 90, 20);
         add(barang);
         barang.setBounds(20, 240, 200, 20);
-       
-        add(lberat);
-        lberat.setBounds(20, 260, 90, 20);
-        add(berat);
-        berat.setBounds(20, 280, 200, 20);
         
         add(ljarak);
-        ljarak.setBounds(20, 300, 90, 20);
+        ljarak.setBounds(20, 260, 90, 20);
         add(jarak);
-        jarak.setBounds(20, 320, 200, 20);
+        jarak.setBounds(20, 280, 200, 20);
         
+        add(lberat);
+        lberat.setBounds(20, 300, 90, 20);
+        add(berat);
+        berat.setBounds(20, 320, 200, 20);
         
+       
         add(btnSimpan);
         btnSimpan.setBounds(20, 360, 90, 20);
         
@@ -114,17 +107,16 @@ public class PengirimanView extends JFrame{
         btnBaru.setBounds(130, 390, 90, 20);
     }
     
-    
     public String getId(){
         return id.getText();
     }
     
-    public String getPenerima(){
-        return penerima.getText();
-    }
-    
     public String getPengirim(){
         return pengirim.getText();
+    }
+    
+    public String getPenerima(){
+        return penerima.getText();
     }
     
     public String getKurir(){
@@ -136,14 +128,12 @@ public class PengirimanView extends JFrame{
     public String getBarang(){
         return barang.getText();
     }
-      public String getBerat(){
-        return berat.getText();
-    }
     public String getJarak(){
         return jarak.getText();
     }
-   
-    
+      public String getBerat(){
+        return berat.getText();
+    }
    
     
     public void setId(){
@@ -168,14 +158,12 @@ public class PengirimanView extends JFrame{
     public void setBarang(){
         barang.setText("");
     }
-     public void setBerat(){
-        berat.setText("");
-    }
-    
     public void setJarak(){
         jarak.setText("");
     }
-    
-    
+     public void setBerat(){
+        berat.setText("");
+    }
+   
 }
 
