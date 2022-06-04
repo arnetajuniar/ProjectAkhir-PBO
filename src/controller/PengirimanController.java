@@ -66,7 +66,7 @@ public class PengirimanController {
             }
         });
           
-        if (pengirimanmodel .getKasirdata()!=0) {
+        if (pengirimanmodel .getPengirimandata()!=0) {
             String[][] dataPengiriman = pengirimanmodel.tampilData();
             pengirimanview.table.setModel((new JTable(dataPengiriman, header)).getModel());
         }

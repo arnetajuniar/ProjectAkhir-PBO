@@ -36,7 +36,7 @@ public class PengirimanModel implements Perhitungan {
         return (2000*brt);
     }
     
-    public int getKasirdata(){
+    public int getPengirimandata(){
         try {
             int totalData = 0;
             String query = "SELECT * FROM `transaksi`";
@@ -82,7 +82,7 @@ public class PengirimanModel implements Perhitungan {
         try{
             int totalData = 0;
             
-            String data[][] = new String[getKasirdata()][9];
+            String data[][] = new String[getPengirimandata()][9];
             
             String query = "SELECT * FROM `transaksi`"; 
             statement = connection.createStatement();
