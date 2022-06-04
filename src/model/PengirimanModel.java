@@ -65,7 +65,7 @@ public class PengirimanModel implements Perhitungan {
             
             statement = connection.createStatement();
             statement.executeUpdate("insert into `transaksi` (`id`, `penerima`, `pengirim`, `kurir`, `alamat` , `nama_barang`,`jarak`,`berat`, `biaya`) " + 
-                        " values  ('" + id + "','" + penerima + "','" + pengirim + "','" + kurir + "','" +alamat+ "','" + barang+ "'," + brt + ","+ jrk +","+ score +")");
+                        " values  ('" + id + "','" + penerima + "','" + pengirim + "','" + kurir + "','" +alamat+ "','" + barang+ "'," + jrk + ","+ brt +","+ score +")");
             
             JOptionPane.showMessageDialog(null, "Input Data Berhasil");
         } catch (Exception e) {
