@@ -1,5 +1,5 @@
 package model;
 
 public interface Perhitungan {
-        public int average(int berat);
+    public int average(int berat);
 }

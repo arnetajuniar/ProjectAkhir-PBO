@@ -18,8 +18,6 @@ public class PengirimanController {
     RegistrasiView registrasiview;
     Object header[] = {"Id", "Pengirim", "Penerima", "Kurir", "Alamat", "Nama Barang", "Jarak (km)", "Berat (kg)", "Ongkir"};
   
-
-
     public PengirimanController(LoginView loginview,  PengirimanModel pengirimanmodel, PengirimanView pengirimanview, RegistrasiView registrasiview) {
         this.pengirimanmodel = pengirimanmodel;
         this. pengirimanview = pengirimanview;
@@ -90,7 +88,7 @@ public class PengirimanController {
                 
                 pengirimanmodel.insertData(id, pengirim,  penerima,  kurir, alamat,  barang,  jarak, berat);
                 String[][] dataPengiriman = pengirimanmodel.tampilData();
-               pengirimanview.table.setModel((new JTable(dataPengiriman, header)).getModel());
+                pengirimanview.table.setModel((new JTable(dataPengiriman, header)).getModel());
             }
         });
         

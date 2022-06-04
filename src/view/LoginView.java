@@ -15,18 +15,12 @@ public class LoginView extends JFrame{
 
     public JTextField user = new JTextField();
     public JTextField pass = new JTextField();
-   
-   
-  
-    
+ 
     public JButton btnLogin = new JButton("Login");
     public JButton btnRegister = new JButton("Registrasi");
 
-
-
     public LoginView() {
        
-        
         setTitle("Login");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
@@ -34,7 +28,6 @@ public class LoginView extends JFrame{
         setLayout(null);
         setSize(400,400);
       
-        
         add(luser);
         luser.setBounds(70, 70, 90, 20);
         add(user);
@@ -45,38 +38,21 @@ public class LoginView extends JFrame{
         add(pass);
         pass.setBounds(180, 100, 120, 20);
         
-     
-         
-     
-        
-        
-        
         add(btnLogin);
         btnLogin.setBounds(90, 150, 200, 20);
         
         add(btnRegister);
         btnRegister.setBounds(90, 190, 200, 20);
         
-      
     }
-    
-    
-   
-    
     
     public String getUser(){
         return user.getText();
     }
  
-    
     public String getPass(){
         return pass.getText();
     }
-    
-  
-   
-    
-   
     
     public void setUser(){
         user.setText("");
@@ -85,12 +61,6 @@ public class LoginView extends JFrame{
     public void setPass(){
         pass.setText("");
     }
-    
-   
-    
-   
-    
-    
     
 }
 

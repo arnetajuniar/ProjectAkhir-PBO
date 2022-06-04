@@ -17,7 +17,6 @@ public class Crud {
         PengirimanModel PengirimanModel = new PengirimanModel( );
                                
         PengirimanController PengirimanController = new PengirimanController( LoginView,  PengirimanModel, PengirimanView, RegistrasiView);
-
     }
     
 }
